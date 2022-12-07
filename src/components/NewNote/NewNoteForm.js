@@ -9,7 +9,12 @@ function NewNoteForm(props) {
   //handleSubmit
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.notesDatas(note);
+    if (!note) {
+      alert("Enter something");
+    } else {
+      props.notesDatas(note);
+    }
+
     setNote(" ");
   };
 

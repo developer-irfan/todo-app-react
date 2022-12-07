@@ -1,5 +1,5 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="fixed z-10 w-full bg-white dark:bg-transparent md:absolute md:bg-transparent">
@@ -12,8 +12,8 @@ function Navbar() {
             className="peer hidden"
           />
           <div className="w-full px-6 flex justify-between lg:w-max md:px-0 z-30">
-            <a
-              href="/"
+            <NavLink
+              to="/"
               aria-label="logo"
               className="flex space-x-2 items-center"
             >
@@ -30,7 +30,7 @@ function Navbar() {
                   APP
                 </span>
               </span>
-            </a>
+            </NavLink>
 
             <div className="flex items-center lg:hidden max-h-10">
               <label
@@ -64,13 +64,20 @@ function Navbar() {
                     flex flex-col gap-y-6 lg:gap-y-0 lg:flex-row w-full"
               >
                 <li>
-                  <a
-                    href="https://dev-irfan.netlify.app/"
-                    target="_blank"
+                  <NavLink
+                    to="/"
                     className="block md:px-4 transition dark:text-gray-300 dark:hover:text-yellow-300 hover:text-yellow-700"
                   >
-                    <span>Developer Info</span>
-                  </a>
+                    <span>Add Notes</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/notes"
+                    className="block md:px-4 transition dark:text-gray-300 dark:hover:text-yellow-300 hover:text-yellow-700"
+                  >
+                    <span>Your Notes</span>
+                  </NavLink>
                 </li>
                 <li>
                   <a
@@ -78,7 +85,7 @@ function Navbar() {
                     target="_blank"
                     className="block md:px-4 transition dark:text-gray-300 dark:hover:text-yellow-300 hover:text-yellow-700"
                   >
-                    <span>Your Notes</span>
+                    <span>Developer Info</span>
                   </a>
                 </li>
               </ul>

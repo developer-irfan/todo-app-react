@@ -1,26 +1,17 @@
-import { useState } from "react";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import AllNotes from "./components/AllNotes/AllNotes";
 import Navbar from "./components/Navbar/Navbar";
-import NewNotes from "./components/NewNote/NewNotes";
-
-const notes = ["My Note 1", "My Note 2", "My Note 3"];
+import Main from "./Main";
 
 function App() {
-  const [allNotes, setAllNotes] = useState(notes);
-
-  const handleNewNote = (Note) => {
-    console.log(Note);
-    setAllNotes((prev) => {
-      return [Note, ...prev];
-    });
-  };
   //return statement
   return (
-    <div className="bg-white dark:bg-darker">
+    <div>
       <Navbar />
-      <NewNotes newNote={handleNewNote} />
-      <AllNotes items={allNotes} />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/notes" element={<AllNotes />} />
+      </Routes>
     </div>
   );
 }
